@@ -1,0 +1,2012 @@
+{
+	"info": {
+		"_postman_id": "aebe246d-8429-4806-9d2d-34261f13237d",
+		"name": "Преподаватели",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38048529"
+	},
+	"item": [
+		{
+			"name": "Авторизация",
+			"item": [
+				{
+					"name": "Авторизация",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"token\" \r",
+									"var jsonData = pm.response.json(); \r",
+									"pm.collectionVariables.set(\"token\", jsonData.accessToken.token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Origin",
+								"value": "https://dev.learn.maxima.school"
+							},
+							{
+								"key": "Referer",
+								"value": "https://dev.learn.maxima.school/"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"login\":\"maxiam_t_2\",\"password\":\"538533\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://backend.dev.learn.maxima.school/auth/login",
+							"protocol": "https",
+							"host": [
+								"backend",
+								"dev",
+								"learn",
+								"maxima",
+								"school"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						},
+						"description": "Generated from cURL: curl 'https://backend.dev.learn.maxima.school/auth/login' \\\r\n  -H 'Accept: application/json, text/plain, */*' \\\r\n  -H 'Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\r\n  -H 'Connection: keep-alive' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -H 'Origin: https://dev.learn.maxima.school' \\\r\n  -H 'Referer: https://dev.learn.maxima.school/' \\\r\n  -H 'Sec-Fetch-Dest: empty' \\\r\n  -H 'Sec-Fetch-Mode: cors' \\\r\n  -H 'Sec-Fetch-Site: same-site' \\\r\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36' \\\r\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  --data-raw '{\"login\":\"maxiam_t_2\",\"password\":\"538533\"}'"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Добавление преподавателя, поле \"Имя\" заполнено цифрами",
+			"item": [
+				{
+					"name": "https://backend.dev.learn.maxima.school/confirm/PARTNER/TEACHER",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Origin",
+								"value": "https://dev.learn.maxima.school"
+							},
+							{
+								"key": "Referer",
+								"value": "https://dev.learn.maxima.school/"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"registerByPhone\":false,\"lastName\":\"Антонов\",\"patronymic\":\"Викторич\",\"email\":\"sdgfdg@dnj.ru\",\"birthDate\":\"2006-10-04\",\"login\":\"gafhjkd\",\"firstName\":\"565756876\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://backend.dev.learn.maxima.school/confirm/PARTNER/TEACHER",
+							"protocol": "https",
+							"host": [
+								"backend",
+								"dev",
+								"learn",
+								"maxima",
+								"school"
+							],
+							"path": [
+								"confirm",
+								"PARTNER",
+								"TEACHER"
+							]
+						},
+						"description": "Generated from cURL: curl 'https://backend.dev.learn.maxima.school/confirm/PARTNER/TEACHER' \\\r\n  -H 'Accept: application/json, text/plain, */*' \\\r\n  -H 'Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXhpYW1fdF8yIiwidWlkIjo2NSwiZXhwIjoxNzI5MDE4MTM1LCJhdXRob3JpdGllcyI6WyJQQVJUTkVSIl0sImp0aSI6IjAwODUyYmVlLWFjZTAtNGI5OC05OTY0LWZhYTFhNjBmZmVkYyJ9.b3tZ-PGIcAKNTNgfNe3SMuuasqBrYl0sfhUqTH0VQzo' \\\r\n  -H 'Connection: keep-alive' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -H 'Origin: https://dev.learn.maxima.school' \\\r\n  -H 'Referer: https://dev.learn.maxima.school/' \\\r\n  -H 'Sec-Fetch-Dest: empty' \\\r\n  -H 'Sec-Fetch-Mode: cors' \\\r\n  -H 'Sec-Fetch-Site: same-site' \\\r\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36' \\\r\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  --data-raw '{\"registerByPhone\":false,\"lastName\":\"Антонов\",\"patronymic\":\"Викторич\",\"email\":\"shfgkjbdzkgjn@dnj.ru\",\"birthDate\":\"2006-10-04\",\"login\":\"antonov\",\"firstName\":\"dfsdfds\"}'"
+					},
+					"response": []
+				},
+				{
+					"name": "https://backend.dev.learn.maxima.school/users?page=0&size=10&role=TEACHER&state=&q=",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXhpYW1fdF8yIiwidWlkIjo2NSwiZXhwIjoxNzI5MDE4MTM1LCJhdXRob3JpdGllcyI6WyJQQVJUTkVSIl0sImp0aSI6IjAwODUyYmVlLWFjZTAtNGI5OC05OTY0LWZhYTFhNjBmZmVkYyJ9.b3tZ-PGIcAKNTNgfNe3SMuuasqBrYl0sfhUqTH0VQzo"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Origin",
+								"value": "https://dev.learn.maxima.school"
+							},
+							{
+								"key": "Referer",
+								"value": "https://dev.learn.maxima.school/"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							}
+						],
+						"url": {
+							"raw": "https://backend.dev.learn.maxima.school/users?page=0&size=10&role=TEACHER&state=&q=",
+							"protocol": "https",
+							"host": [
+								"backend",
+								"dev",
+								"learn",
+								"maxima",
+								"school"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "role",
+									"value": "TEACHER"
+								},
+								{
+									"key": "state",
+									"value": ""
+								},
+								{
+									"key": "q",
+									"value": ""
+								}
+							]
+						},
+						"description": "Generated from cURL: curl 'https://backend.dev.learn.maxima.school/users?page=0&size=10&role=TEACHER&state=&q=' \\\r\n  -H 'Accept: application/json, text/plain, */*' \\\r\n  -H 'Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXhpYW1fdF8yIiwidWlkIjo2NSwiZXhwIjoxNzI5MDE4MTM1LCJhdXRob3JpdGllcyI6WyJQQVJUTkVSIl0sImp0aSI6IjAwODUyYmVlLWFjZTAtNGI5OC05OTY0LWZhYTFhNjBmZmVkYyJ9.b3tZ-PGIcAKNTNgfNe3SMuuasqBrYl0sfhUqTH0VQzo' \\\r\n  -H 'Connection: keep-alive' \\\r\n  -H 'Origin: https://dev.learn.maxima.school' \\\r\n  -H 'Referer: https://dev.learn.maxima.school/' \\\r\n  -H 'Sec-Fetch-Dest: empty' \\\r\n  -H 'Sec-Fetch-Mode: cors' \\\r\n  -H 'Sec-Fetch-Site: same-site' \\\r\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36' \\\r\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"'"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Добавление тега",
+			"item": [
+				{
+					"name": "Тег",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Origin",
+								"value": "https://dev.learn.maxima.school"
+							},
+							{
+								"key": "Referer",
+								"value": "https://dev.learn.maxima.school/"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"userId\":981,\"tagIds\":[36]}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://backend.dev.learn.maxima.school/materials/update-access/users",
+							"protocol": "https",
+							"host": [
+								"backend",
+								"dev",
+								"learn",
+								"maxima",
+								"school"
+							],
+							"path": [
+								"materials",
+								"update-access",
+								"users"
+							]
+						},
+						"description": "Generated from cURL: curl 'https://backend.dev.learn.maxima.school/materials/update-access/users' \\\r\n  -H 'Accept: application/json, text/plain, */*' \\\r\n  -H 'Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXhpYW1fdF8yIiwidWlkIjo2NSwiZXhwIjoxNzI5MDE5MDQ4LCJhdXRob3JpdGllcyI6WyJQQVJUTkVSIl0sImp0aSI6IjBiYmM3MTEwLWU0YmMtNGNjOS04Yzc4LTY0M2YxMjk4OWFmMyJ9.RMJ-OyKeisXQ_fm8N3PT9QXl-cN3LR4i5XgtLOuffgc' \\\r\n  -H 'Connection: keep-alive' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -H 'Origin: https://dev.learn.maxima.school' \\\r\n  -H 'Referer: https://dev.learn.maxima.school/' \\\r\n  -H 'Sec-Fetch-Dest: empty' \\\r\n  -H 'Sec-Fetch-Mode: cors' \\\r\n  -H 'Sec-Fetch-Site: same-site' \\\r\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36' \\\r\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  --data-raw '{\"userId\":981,\"tagIds\":[36]}'"
+					},
+					"response": []
+				},
+				{
+					"name": "Тег",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXhpYW1fdF8yIiwidWlkIjo2NSwiZXhwIjoxNzI5MDIxOTA1LCJhdXRob3JpdGllcyI6WyJQQVJUTkVSIl0sImp0aSI6IjM0MjZjMDgzLTMyYjYtNGNiNC05ZDU1LTU1NDg1ZmEyMWJjMCJ9.9h3uweCDP-ikcCaoM57ksauFOWmGt_piGulrBA4rDDc"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Origin",
+								"value": "https://dev.learn.maxima.school"
+							},
+							{
+								"key": "Referer",
+								"value": "https://dev.learn.maxima.school/"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							}
+						],
+						"url": {
+							"raw": "https://backend.dev.learn.maxima.school/schedule-management/get?user-id=981",
+							"protocol": "https",
+							"host": [
+								"backend",
+								"dev",
+								"learn",
+								"maxima",
+								"school"
+							],
+							"path": [
+								"schedule-management",
+								"get"
+							],
+							"query": [
+								{
+									"key": "user-id",
+									"value": "981"
+								}
+							]
+						},
+						"description": "Generated from cURL: curl 'https://backend.dev.learn.maxima.school/schedule-management/get?user-id=932' \\\r\n  -H 'Accept: application/json, text/plain, */*' \\\r\n  -H 'Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXhpYW1fdF8yIiwidWlkIjo2NSwiZXhwIjoxNzI5MDIxOTA1LCJhdXRob3JpdGllcyI6WyJQQVJUTkVSIl0sImp0aSI6IjM0MjZjMDgzLTMyYjYtNGNiNC05ZDU1LTU1NDg1ZmEyMWJjMCJ9.9h3uweCDP-ikcCaoM57ksauFOWmGt_piGulrBA4rDDc' \\\r\n  -H 'Connection: keep-alive' \\\r\n  -H 'Origin: https://dev.learn.maxima.school' \\\r\n  -H 'Referer: https://dev.learn.maxima.school/' \\\r\n  -H 'Sec-Fetch-Dest: empty' \\\r\n  -H 'Sec-Fetch-Mode: cors' \\\r\n  -H 'Sec-Fetch-Site: same-site' \\\r\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36' \\\r\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"'"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Добавление преподавателя с некорректно введённым адресом почты",
+			"item": [
+				{
+					"name": "Почта",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Origin",
+								"value": "https://dev.learn.maxima.school"
+							},
+							{
+								"key": "Referer",
+								"value": "https://dev.learn.maxima.school/"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"registerByPhone\":false,\"lastName\":\"Прачев\",\"firstName\":\"Михаил\",\"patronymic\":\"Работович\",\"login\":\"mishka\",\"email\":\"rstrsrtsr@ru\",\"birthDate\":\"2009-10-15\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://backend.dev.learn.maxima.school/confirm/PARTNER/TEACHER",
+							"protocol": "https",
+							"host": [
+								"backend",
+								"dev",
+								"learn",
+								"maxima",
+								"school"
+							],
+							"path": [
+								"confirm",
+								"PARTNER",
+								"TEACHER"
+							]
+						},
+						"description": "Generated from cURL: curl 'https://backend.dev.learn.maxima.school/confirm/PARTNER/TEACHER' \\\r\n  -H 'Accept: application/json, text/plain, */*' \\\r\n  -H 'Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXhpYW1fdF8yIiwidWlkIjo2NSwiZXhwIjoxNzI5MDE4MTM1LCJhdXRob3JpdGllcyI6WyJQQVJUTkVSIl0sImp0aSI6IjAwODUyYmVlLWFjZTAtNGI5OC05OTY0LWZhYTFhNjBmZmVkYyJ9.b3tZ-PGIcAKNTNgfNe3SMuuasqBrYl0sfhUqTH0VQzo' \\\r\n  -H 'Connection: keep-alive' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -H 'Origin: https://dev.learn.maxima.school' \\\r\n  -H 'Referer: https://dev.learn.maxima.school/' \\\r\n  -H 'Sec-Fetch-Dest: empty' \\\r\n  -H 'Sec-Fetch-Mode: cors' \\\r\n  -H 'Sec-Fetch-Site: same-site' \\\r\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36' \\\r\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  --data-raw '{\"registerByPhone\":false,\"lastName\":\"Прачев\",\"firstName\":\"Михаил\",\"patronymic\":\"Работович\",\"login\":\"mihail_prachev\",\"email\":\"sjdhfskjdfg@ru\",\"birthDate\":\"2009-10-15\"}'"
+					},
+					"response": []
+				},
+				{
+					"name": "Почта",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXhpYW1fdF8yIiwidWlkIjo2NSwiZXhwIjoxNzI5MDE4MTM1LCJhdXRob3JpdGllcyI6WyJQQVJUTkVSIl0sImp0aSI6IjAwODUyYmVlLWFjZTAtNGI5OC05OTY0LWZhYTFhNjBmZmVkYyJ9.b3tZ-PGIcAKNTNgfNe3SMuuasqBrYl0sfhUqTH0VQzo"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Origin",
+								"value": "https://dev.learn.maxima.school"
+							},
+							{
+								"key": "Referer",
+								"value": "https://dev.learn.maxima.school/"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							}
+						],
+						"url": {
+							"raw": "https://backend.dev.learn.maxima.school/users?page=0&size=10&role=TEACHER&state=&q=",
+							"protocol": "https",
+							"host": [
+								"backend",
+								"dev",
+								"learn",
+								"maxima",
+								"school"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "role",
+									"value": "TEACHER"
+								},
+								{
+									"key": "state",
+									"value": ""
+								},
+								{
+									"key": "q",
+									"value": ""
+								}
+							]
+						},
+						"description": "Generated from cURL: curl 'https://backend.dev.learn.maxima.school/users?page=0&size=10&role=TEACHER&state=&q=' \\\r\n  -H 'Accept: application/json, text/plain, */*' \\\r\n  -H 'Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXhpYW1fdF8yIiwidWlkIjo2NSwiZXhwIjoxNzI5MDE4MTM1LCJhdXRob3JpdGllcyI6WyJQQVJUTkVSIl0sImp0aSI6IjAwODUyYmVlLWFjZTAtNGI5OC05OTY0LWZhYTFhNjBmZmVkYyJ9.b3tZ-PGIcAKNTNgfNe3SMuuasqBrYl0sfhUqTH0VQzo' \\\r\n  -H 'Connection: keep-alive' \\\r\n  -H 'Origin: https://dev.learn.maxima.school' \\\r\n  -H 'Referer: https://dev.learn.maxima.school/' \\\r\n  -H 'Sec-Fetch-Dest: empty' \\\r\n  -H 'Sec-Fetch-Mode: cors' \\\r\n  -H 'Sec-Fetch-Site: same-site' \\\r\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36' \\\r\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"'"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Добавление преподавателя с активным чек-боксом \"Регистрация по телефону\", но без заполнения номера",
+			"item": [
+				{
+					"name": "Без номера",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Origin",
+								"value": "https://dev.learn.maxima.school"
+							},
+							{
+								"key": "Referer",
+								"value": "https://dev.learn.maxima.school/"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"registerByPhone\":true,\"lastName\":\"Папвпа\",\"firstName\":\"впавап\",\"patronymic\":\"авпыва\",\"email\":\"sdgdfg@df.ru\",\"birthDate\":\"2024-10-10\",\"login\":\"dfjja\",\"phone\":\"\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://backend.dev.learn.maxima.school/confirm/PARTNER/TEACHER",
+							"protocol": "https",
+							"host": [
+								"backend",
+								"dev",
+								"learn",
+								"maxima",
+								"school"
+							],
+							"path": [
+								"confirm",
+								"PARTNER",
+								"TEACHER"
+							]
+						},
+						"description": "Generated from cURL: curl 'https://backend.dev.learn.maxima.school/confirm/PARTNER/TEACHER' \\\r\n  -H 'Accept: application/json, text/plain, */*' \\\r\n  -H 'Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXhpYW1fdF8yIiwidWlkIjo2NSwiZXhwIjoxNzI5MDE5MDQ4LCJhdXRob3JpdGllcyI6WyJQQVJUTkVSIl0sImp0aSI6IjBiYmM3MTEwLWU0YmMtNGNjOS04Yzc4LTY0M2YxMjk4OWFmMyJ9.RMJ-OyKeisXQ_fm8N3PT9QXl-cN3LR4i5XgtLOuffgc' \\\r\n  -H 'Connection: keep-alive' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -H 'Origin: https://dev.learn.maxima.school' \\\r\n  -H 'Referer: https://dev.learn.maxima.school/' \\\r\n  -H 'Sec-Fetch-Dest: empty' \\\r\n  -H 'Sec-Fetch-Mode: cors' \\\r\n  -H 'Sec-Fetch-Site: same-site' \\\r\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36' \\\r\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  --data-raw '{\"registerByPhone\":true,\"lastName\":\"Папвпа\",\"firstName\":\"впавап\",\"patronymic\":\"авпыва\",\"email\":\"sfdgdfgs@df.ru\",\"birthDate\":\"2024-10-10\",\"login\":\"vpavap_papvpa\",\"phone\":\"+7 (887) 767-65-65\"}'"
+					},
+					"response": []
+				},
+				{
+					"name": "Без номера",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXhpYW1fdF8yIiwidWlkIjo2NSwiZXhwIjoxNzI5MDE5MDQ4LCJhdXRob3JpdGllcyI6WyJQQVJUTkVSIl0sImp0aSI6IjBiYmM3MTEwLWU0YmMtNGNjOS04Yzc4LTY0M2YxMjk4OWFmMyJ9.RMJ-OyKeisXQ_fm8N3PT9QXl-cN3LR4i5XgtLOuffgc"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Origin",
+								"value": "https://dev.learn.maxima.school"
+							},
+							{
+								"key": "Referer",
+								"value": "https://dev.learn.maxima.school/"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							}
+						],
+						"url": {
+							"raw": "https://backend.dev.learn.maxima.school/users?page=0&size=10&role=TEACHER&state=&q=",
+							"protocol": "https",
+							"host": [
+								"backend",
+								"dev",
+								"learn",
+								"maxima",
+								"school"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "role",
+									"value": "TEACHER"
+								},
+								{
+									"key": "state",
+									"value": ""
+								},
+								{
+									"key": "q",
+									"value": ""
+								}
+							]
+						},
+						"description": "Generated from cURL: curl 'https://backend.dev.learn.maxima.school/users?page=0&size=10&role=TEACHER&state=&q=' \\\r\n  -H 'Accept: application/json, text/plain, */*' \\\r\n  -H 'Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXhpYW1fdF8yIiwidWlkIjo2NSwiZXhwIjoxNzI5MDE5MDQ4LCJhdXRob3JpdGllcyI6WyJQQVJUTkVSIl0sImp0aSI6IjBiYmM3MTEwLWU0YmMtNGNjOS04Yzc4LTY0M2YxMjk4OWFmMyJ9.RMJ-OyKeisXQ_fm8N3PT9QXl-cN3LR4i5XgtLOuffgc' \\\r\n  -H 'Connection: keep-alive' \\\r\n  -H 'Origin: https://dev.learn.maxima.school' \\\r\n  -H 'Referer: https://dev.learn.maxima.school/' \\\r\n  -H 'Sec-Fetch-Dest: empty' \\\r\n  -H 'Sec-Fetch-Mode: cors' \\\r\n  -H 'Sec-Fetch-Site: same-site' \\\r\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36' \\\r\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"'"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Создание анкеты преподавателя",
+			"item": [
+				{
+					"name": "Анкета",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Origin",
+								"value": "https://dev.learn.maxima.school"
+							},
+							{
+								"key": "Referer",
+								"value": "https://dev.learn.maxima.school/"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"firstName\":\"+++++++++++\",\"lastName\":\"+++++++++++\",\"patronymic\":\"+++++++++++\",\"phone\":null,\"email\":\"fgdfhhgkjdf@fd.ru\",\"birthDate\":\"\",\"city\":\"Самара\",\"state\":\"\",\"teacherId\":\"981\",\"photoFileName\":null,\"additionalPhoneNumber\":\"\",\"careerBeginningDate\":\"\",\"education\":\"\",\"specialityByEducation\":\"\",\"hasPedagogicalEducation\":true,\"aboutMe\":\"\",\"stages\":[],\"languages\":[],\"subjects\":[],\"photo\":null}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://backend.dev.learn.maxima.school/profiles/teachers",
+							"protocol": "https",
+							"host": [
+								"backend",
+								"dev",
+								"learn",
+								"maxima",
+								"school"
+							],
+							"path": [
+								"profiles",
+								"teachers"
+							]
+						},
+						"description": "Generated from cURL: curl 'https://backend.dev.learn.maxima.school/profiles/teachers' \\\r\n  -H 'Accept: application/json, text/plain, */*' \\\r\n  -H 'Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXhpYW1fdF8yIiwidWlkIjo2NSwiZXhwIjoxNzI5MDE5MDQ4LCJhdXRob3JpdGllcyI6WyJQQVJUTkVSIl0sImp0aSI6IjBiYmM3MTEwLWU0YmMtNGNjOS04Yzc4LTY0M2YxMjk4OWFmMyJ9.RMJ-OyKeisXQ_fm8N3PT9QXl-cN3LR4i5XgtLOuffgc' \\\r\n  -H 'Connection: keep-alive' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -H 'Origin: https://dev.learn.maxima.school' \\\r\n  -H 'Referer: https://dev.learn.maxima.school/' \\\r\n  -H 'Sec-Fetch-Dest: empty' \\\r\n  -H 'Sec-Fetch-Mode: cors' \\\r\n  -H 'Sec-Fetch-Site: same-site' \\\r\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36' \\\r\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  --data-raw '{\"firstName\":\"+++++++++++\",\"lastName\":\"+++++++++++\",\"patronymic\":\"+++++++++++\",\"phone\":null,\"email\":\"+++++++++++\",\"birthDate\":\"\",\"city\":\"Самара\",\"state\":\"\",\"teacherId\":\"981\",\"photoFileName\":null,\"additionalPhoneNumber\":\"\",\"careerBeginningDate\":\"\",\"education\":\"\",\"specialityByEducation\":\"\",\"hasPedagogicalEducation\":true,\"aboutMe\":\"\",\"stages\":[],\"languages\":[],\"subjects\":[],\"photo\":null}'"
+					},
+					"response": []
+				},
+				{
+					"name": "Анкета",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXhpYW1fdF8yIiwidWlkIjo2NSwiZXhwIjoxNzI5MDIyODMyLCJhdXRob3JpdGllcyI6WyJQQVJUTkVSIl0sImp0aSI6IjhlYjFkZGY0LThjZWMtNGVmOS05YmE4LTU0NDc2MmY1YTlhMyJ9.bFUh0u3TmA4It0mT8o6XwoOnfgGq62NAPML9N306zAE"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Origin",
+								"value": "https://dev.learn.maxima.school"
+							},
+							{
+								"key": "Referer",
+								"value": "https://dev.learn.maxima.school/"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							}
+						],
+						"url": {
+							"raw": "https://backend.dev.learn.maxima.school/users/981",
+							"protocol": "https",
+							"host": [
+								"backend",
+								"dev",
+								"learn",
+								"maxima",
+								"school"
+							],
+							"path": [
+								"users",
+								"981"
+							]
+						},
+						"description": "Generated from cURL: curl 'https://backend.dev.learn.maxima.school/users/932' \\\r\n  -H 'Accept: application/json, text/plain, */*' \\\r\n  -H 'Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXhpYW1fdF8yIiwidWlkIjo2NSwiZXhwIjoxNzI5MDIyODMyLCJhdXRob3JpdGllcyI6WyJQQVJUTkVSIl0sImp0aSI6IjhlYjFkZGY0LThjZWMtNGVmOS05YmE4LTU0NDc2MmY1YTlhMyJ9.bFUh0u3TmA4It0mT8o6XwoOnfgGq62NAPML9N306zAE' \\\r\n  -H 'Connection: keep-alive' \\\r\n  -H 'Origin: https://dev.learn.maxima.school' \\\r\n  -H 'Referer: https://dev.learn.maxima.school/' \\\r\n  -H 'Sec-Fetch-Dest: empty' \\\r\n  -H 'Sec-Fetch-Mode: cors' \\\r\n  -H 'Sec-Fetch-Site: same-site' \\\r\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36' \\\r\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"'"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Разбан преподавателя",
+			"item": [
+				{
+					"name": "Разбан",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Content-Length",
+								"value": "0"
+							},
+							{
+								"key": "Origin",
+								"value": "https://dev.learn.maxima.school"
+							},
+							{
+								"key": "Referer",
+								"value": "https://dev.learn.maxima.school/"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://backend.dev.learn.maxima.school/users/230/unban",
+							"protocol": "https",
+							"host": [
+								"backend",
+								"dev",
+								"learn",
+								"maxima",
+								"school"
+							],
+							"path": [
+								"users",
+								"230",
+								"unban"
+							]
+						},
+						"description": "Generated from cURL: curl 'https://backend.dev.learn.maxima.school/users/230/unban' \\\r\n  -X 'POST' \\\r\n  -H 'Accept: application/json, text/plain, */*' \\\r\n  -H 'Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXhpYW1fdF8yIiwidWlkIjo2NSwiZXhwIjoxNzI5MDE5OTk3LCJhdXRob3JpdGllcyI6WyJQQVJUTkVSIl0sImp0aSI6IjRmN2U0MTIzLTJiOTYtNDUwZC04YTdmLTJiMjIwNWM4YTZhNiJ9.81o5SkrxmQiDgx9rpSGaKtIBX-IZusvRJhAmdvzsMfI' \\\r\n  -H 'Connection: keep-alive' \\\r\n  -H 'Content-Length: 0' \\\r\n  -H 'Origin: https://dev.learn.maxima.school' \\\r\n  -H 'Referer: https://dev.learn.maxima.school/' \\\r\n  -H 'Sec-Fetch-Dest: empty' \\\r\n  -H 'Sec-Fetch-Mode: cors' \\\r\n  -H 'Sec-Fetch-Site: same-site' \\\r\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36' \\\r\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"'"
+					},
+					"response": []
+				},
+				{
+					"name": "Разбан",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXhpYW1fdF8yIiwidWlkIjo2NSwiZXhwIjoxNzI5MDE5OTk3LCJhdXRob3JpdGllcyI6WyJQQVJUTkVSIl0sImp0aSI6IjRmN2U0MTIzLTJiOTYtNDUwZC04YTdmLTJiMjIwNWM4YTZhNiJ9.81o5SkrxmQiDgx9rpSGaKtIBX-IZusvRJhAmdvzsMfI"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Origin",
+								"value": "https://dev.learn.maxima.school"
+							},
+							{
+								"key": "Referer",
+								"value": "https://dev.learn.maxima.school/"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							}
+						],
+						"url": {
+							"raw": "https://backend.dev.learn.maxima.school/users?page=0&size=10&role=TEACHER&state=BANNED&q=",
+							"protocol": "https",
+							"host": [
+								"backend",
+								"dev",
+								"learn",
+								"maxima",
+								"school"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "role",
+									"value": "TEACHER"
+								},
+								{
+									"key": "state",
+									"value": "BANNED"
+								},
+								{
+									"key": "q",
+									"value": ""
+								}
+							]
+						},
+						"description": "Generated from cURL: curl 'https://backend.dev.learn.maxima.school/users?page=0&size=10&role=TEACHER&state=BANNED&q=' \\\r\n  -H 'Accept: application/json, text/plain, */*' \\\r\n  -H 'Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXhpYW1fdF8yIiwidWlkIjo2NSwiZXhwIjoxNzI5MDE5OTk3LCJhdXRob3JpdGllcyI6WyJQQVJUTkVSIl0sImp0aSI6IjRmN2U0MTIzLTJiOTYtNDUwZC04YTdmLTJiMjIwNWM4YTZhNiJ9.81o5SkrxmQiDgx9rpSGaKtIBX-IZusvRJhAmdvzsMfI' \\\r\n  -H 'Connection: keep-alive' \\\r\n  -H 'Origin: https://dev.learn.maxima.school' \\\r\n  -H 'Referer: https://dev.learn.maxima.school/' \\\r\n  -H 'Sec-Fetch-Dest: empty' \\\r\n  -H 'Sec-Fetch-Mode: cors' \\\r\n  -H 'Sec-Fetch-Site: same-site' \\\r\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36' \\\r\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"'"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Изменение имени преподавателя",
+			"item": [
+				{
+					"name": "Изменение имени",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Origin",
+								"value": "https://dev.learn.maxima.school"
+							},
+							{
+								"key": "Referer",
+								"value": "https://dev.learn.maxima.school/"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":649,\"state\":\"CONFIRMED\",\"firstName\":\"Азат\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://backend.dev.learn.maxima.school/users",
+							"protocol": "https",
+							"host": [
+								"backend",
+								"dev",
+								"learn",
+								"maxima",
+								"school"
+							],
+							"path": [
+								"users"
+							]
+						},
+						"description": "Generated from cURL: curl 'https://backend.dev.learn.maxima.school/users' \\\r\n  -X 'PUT' \\\r\n  -H 'Accept: application/json, text/plain, */*' \\\r\n  -H 'Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXhpYW1fdF8yIiwidWlkIjo2NSwiZXhwIjoxNzI5MDE5MDQ4LCJhdXRob3JpdGllcyI6WyJQQVJUTkVSIl0sImp0aSI6IjBiYmM3MTEwLWU0YmMtNGNjOS04Yzc4LTY0M2YxMjk4OWFmMyJ9.RMJ-OyKeisXQ_fm8N3PT9QXl-cN3LR4i5XgtLOuffgc' \\\r\n  -H 'Connection: keep-alive' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -H 'Origin: https://dev.learn.maxima.school' \\\r\n  -H 'Referer: https://dev.learn.maxima.school/' \\\r\n  -H 'Sec-Fetch-Dest: empty' \\\r\n  -H 'Sec-Fetch-Mode: cors' \\\r\n  -H 'Sec-Fetch-Site: same-site' \\\r\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36' \\\r\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  --data-raw '{\"id\":649,\"state\":\"CONFIRMED\",\"role\":\"TEACHER\",\"locale\":\"RU\",\"firstName\":\"Роберт\",\"lastName\":\"5\",\"patronymic\":\"5\",\"phone\":\"+7 (253) 430-44-46\",\"email\":\"7\",\"login\":\"5_55\",\"parentName\":null,\"parentPhone\":null,\"age\":null,\"gender\":\"NOT_CHOSEN\",\"costType\":null,\"currencyType\":null,\"visits\":null,\"birthDate\":\"1955-01-13\",\"center\":\"maxiam\",\"creator\":null,\"trulySolutionsCount\":0,\"completedPercent\":0,\"averageMark\":0,\"coursesCount\":0,\"studentsCount\":0,\"teachersCount\":0,\"courseTitle\":null,\"courseId\":null,\"discount\":null,\"onlinePartnerName\":null,\"subscriptionType\":null,\"studentPaymentSubscription\":null,\"source\":\"\",\"sourceInfo\":null,\"balance\":null,\"cost\":null,\"nextCostInMonth\":null,\"payouts\":null,\"comment\":null,\"moneyBackType\":null,\"name\":null,\"address\":null,\"bankName\":null,\"ks\":null,\"rs\":null,\"organizationType\":null,\"index\":null,\"region\":null,\"city\":\"\",\"country\":\"\",\"street\":null,\"building\":null,\"flat\":null,\"contractNumber\":null,\"rate\":null,\"royalty\":null,\"freeAccountsNumber\":null,\"additionalAccountCost\":null,\"tempAccessUUID\":null,\"tempDateTime\":\"2024-07-25T20:46:04.805\",\"registrationDateTime\":\"2024-07-25T20:46:04.805\",\"daysOnSite\":82,\"expiresDateTime\":\"2024-08-04T20:46:04.805\",\"requiredFormIds\":null,\"employmentStatus\":null,\"bik\":null,\"inn\":null,\"kpp\":null,\"ogrn\":null,\"registerByPhone\":false}'"
+					},
+					"response": []
+				},
+				{
+					"name": "Изменение имени",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXhpYW1fdF8yIiwidWlkIjo2NSwiZXhwIjoxNzI5MDE5MDQ4LCJhdXRob3JpdGllcyI6WyJQQVJUTkVSIl0sImp0aSI6IjBiYmM3MTEwLWU0YmMtNGNjOS04Yzc4LTY0M2YxMjk4OWFmMyJ9.RMJ-OyKeisXQ_fm8N3PT9QXl-cN3LR4i5XgtLOuffgc"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Origin",
+								"value": "https://dev.learn.maxima.school"
+							},
+							{
+								"key": "Referer",
+								"value": "https://dev.learn.maxima.school/"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							}
+						],
+						"url": {
+							"raw": "https://backend.dev.learn.maxima.school/users?page=0&size=10&role=TEACHER&state=CONFIRMED&q=",
+							"protocol": "https",
+							"host": [
+								"backend",
+								"dev",
+								"learn",
+								"maxima",
+								"school"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "role",
+									"value": "TEACHER"
+								},
+								{
+									"key": "state",
+									"value": "CONFIRMED"
+								},
+								{
+									"key": "q",
+									"value": ""
+								}
+							]
+						},
+						"description": "Generated from cURL: curl 'https://backend.dev.learn.maxima.school/users?page=0&size=10&role=TEACHER&state=CONFIRMED&q=' \\\r\n  -H 'Accept: application/json, text/plain, */*' \\\r\n  -H 'Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXhpYW1fdF8yIiwidWlkIjo2NSwiZXhwIjoxNzI5MDE5MDQ4LCJhdXRob3JpdGllcyI6WyJQQVJUTkVSIl0sImp0aSI6IjBiYmM3MTEwLWU0YmMtNGNjOS04Yzc4LTY0M2YxMjk4OWFmMyJ9.RMJ-OyKeisXQ_fm8N3PT9QXl-cN3LR4i5XgtLOuffgc' \\\r\n  -H 'Connection: keep-alive' \\\r\n  -H 'Origin: https://dev.learn.maxima.school' \\\r\n  -H 'Referer: https://dev.learn.maxima.school/' \\\r\n  -H 'Sec-Fetch-Dest: empty' \\\r\n  -H 'Sec-Fetch-Mode: cors' \\\r\n  -H 'Sec-Fetch-Site: same-site' \\\r\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36' \\\r\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"'"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Запрос списка преподавателей \"Активные\"",
+			"item": [
+				{
+					"name": "Активные",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Origin",
+								"value": "https://dev.learn.maxima.school"
+							},
+							{
+								"key": "Referer",
+								"value": "https://dev.learn.maxima.school/"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							}
+						],
+						"url": {
+							"raw": "https://backend.dev.learn.maxima.school/users?page=0&size=10&role=TEACHER&state=CONFIRMED&q=",
+							"protocol": "https",
+							"host": [
+								"backend",
+								"dev",
+								"learn",
+								"maxima",
+								"school"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "role",
+									"value": "TEACHER"
+								},
+								{
+									"key": "state",
+									"value": "CONFIRMED"
+								},
+								{
+									"key": "q",
+									"value": ""
+								}
+							]
+						},
+						"description": "Generated from cURL: curl 'https://backend.dev.learn.maxima.school/users?page=0&size=10&role=TEACHER&state=CONFIRMED&q=' \\\r\n  -H 'Accept: application/json, text/plain, */*' \\\r\n  -H 'Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXhpYW1fdF8yIiwidWlkIjo2NSwiZXhwIjoxNzI5MDE5MDQ4LCJhdXRob3JpdGllcyI6WyJQQVJUTkVSIl0sImp0aSI6IjBiYmM3MTEwLWU0YmMtNGNjOS04Yzc4LTY0M2YxMjk4OWFmMyJ9.RMJ-OyKeisXQ_fm8N3PT9QXl-cN3LR4i5XgtLOuffgc' \\\r\n  -H 'Connection: keep-alive' \\\r\n  -H 'Origin: https://dev.learn.maxima.school' \\\r\n  -H 'Referer: https://dev.learn.maxima.school/' \\\r\n  -H 'Sec-Fetch-Dest: empty' \\\r\n  -H 'Sec-Fetch-Mode: cors' \\\r\n  -H 'Sec-Fetch-Site: same-site' \\\r\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36' \\\r\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"'"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Добавление комментария преподавателю",
+			"item": [
+				{
+					"name": "коммент",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Origin",
+								"value": "https://dev.learn.maxima.school"
+							},
+							{
+								"key": "Referer",
+								"value": "https://dev.learn.maxima.school/"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"text\":\"пвапвыарвопр\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://backend.dev.learn.maxima.school/comments/users/981",
+							"protocol": "https",
+							"host": [
+								"backend",
+								"dev",
+								"learn",
+								"maxima",
+								"school"
+							],
+							"path": [
+								"comments",
+								"users",
+								"981"
+							]
+						},
+						"description": "Generated from cURL: curl 'https://backend.dev.learn.maxima.school/comments/users/981' \\\r\n  -H 'Accept: application/json, text/plain, */*' \\\r\n  -H 'Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXhpYW1fdF8yIiwidWlkIjo2NSwiZXhwIjoxNzI5MDE4MTM1LCJhdXRob3JpdGllcyI6WyJQQVJUTkVSIl0sImp0aSI6IjAwODUyYmVlLWFjZTAtNGI5OC05OTY0LWZhYTFhNjBmZmVkYyJ9.b3tZ-PGIcAKNTNgfNe3SMuuasqBrYl0sfhUqTH0VQzo' \\\r\n  -H 'Connection: keep-alive' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -H 'Origin: https://dev.learn.maxima.school' \\\r\n  -H 'Referer: https://dev.learn.maxima.school/' \\\r\n  -H 'Sec-Fetch-Dest: empty' \\\r\n  -H 'Sec-Fetch-Mode: cors' \\\r\n  -H 'Sec-Fetch-Site: same-site' \\\r\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36' \\\r\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  --data-raw '{\"text\":\"пвапвыарвопр\"}'"
+					},
+					"response": []
+				},
+				{
+					"name": "коммент",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXhpYW1fdF8yIiwidWlkIjo2NSwiZXhwIjoxNzI5MDIwOTEyLCJhdXRob3JpdGllcyI6WyJQQVJUTkVSIl0sImp0aSI6IjRhNjkwZjNmLTkzYzYtNGIzYi05MjY0LTA0ZmU4OGFlOGQxNiJ9.IqMZMca-0xwZyk0zZhHnehyagX8JscjXcGHwZNe_njE"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Origin",
+								"value": "https://dev.learn.maxima.school"
+							},
+							{
+								"key": "Referer",
+								"value": "https://dev.learn.maxima.school/"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							}
+						],
+						"url": {
+							"raw": "https://backend.dev.learn.maxima.school/comments/users/981",
+							"protocol": "https",
+							"host": [
+								"backend",
+								"dev",
+								"learn",
+								"maxima",
+								"school"
+							],
+							"path": [
+								"comments",
+								"users",
+								"981"
+							]
+						},
+						"description": "Generated from cURL: curl 'https://backend.dev.learn.maxima.school/comments/users/932' \\\r\n  -H 'Accept: application/json, text/plain, */*' \\\r\n  -H 'Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXhpYW1fdF8yIiwidWlkIjo2NSwiZXhwIjoxNzI5MDIwOTEyLCJhdXRob3JpdGllcyI6WyJQQVJUTkVSIl0sImp0aSI6IjRhNjkwZjNmLTkzYzYtNGIzYi05MjY0LTA0ZmU4OGFlOGQxNiJ9.IqMZMca-0xwZyk0zZhHnehyagX8JscjXcGHwZNe_njE' \\\r\n  -H 'Connection: keep-alive' \\\r\n  -H 'Origin: https://dev.learn.maxima.school' \\\r\n  -H 'Referer: https://dev.learn.maxima.school/' \\\r\n  -H 'Sec-Fetch-Dest: empty' \\\r\n  -H 'Sec-Fetch-Mode: cors' \\\r\n  -H 'Sec-Fetch-Site: same-site' \\\r\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36' \\\r\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"'"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Запрос на бан преподавателя",
+			"item": [
+				{
+					"name": "Бан",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Content-Length",
+								"value": "0"
+							},
+							{
+								"key": "Origin",
+								"value": "https://dev.learn.maxima.school"
+							},
+							{
+								"key": "Referer",
+								"value": "https://dev.learn.maxima.school/"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							}
+						],
+						"url": {
+							"raw": "https://backend.dev.learn.maxima.school/users/1032/ban",
+							"protocol": "https",
+							"host": [
+								"backend",
+								"dev",
+								"learn",
+								"maxima",
+								"school"
+							],
+							"path": [
+								"users",
+								"1032",
+								"ban"
+							]
+						},
+						"description": "Generated from cURL: curl 'https://backend.dev.learn.maxima.school/users/1032/ban' \\\r\n  -X 'POST' \\\r\n  -H 'Accept: application/json, text/plain, */*' \\\r\n  -H 'Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXhpYW1fdF8yIiwidWlkIjo2NSwiZXhwIjoxNzI5MDE5OTk3LCJhdXRob3JpdGllcyI6WyJQQVJUTkVSIl0sImp0aSI6IjRmN2U0MTIzLTJiOTYtNDUwZC04YTdmLTJiMjIwNWM4YTZhNiJ9.81o5SkrxmQiDgx9rpSGaKtIBX-IZusvRJhAmdvzsMfI' \\\r\n  -H 'Connection: keep-alive' \\\r\n  -H 'Content-Length: 0' \\\r\n  -H 'Origin: https://dev.learn.maxima.school' \\\r\n  -H 'Referer: https://dev.learn.maxima.school/' \\\r\n  -H 'Sec-Fetch-Dest: empty' \\\r\n  -H 'Sec-Fetch-Mode: cors' \\\r\n  -H 'Sec-Fetch-Site: same-site' \\\r\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36' \\\r\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"'"
+					},
+					"response": []
+				},
+				{
+					"name": "Бан",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXhpYW1fdF8yIiwidWlkIjo2NSwiZXhwIjoxNzI5MDE5OTk3LCJhdXRob3JpdGllcyI6WyJQQVJUTkVSIl0sImp0aSI6IjRmN2U0MTIzLTJiOTYtNDUwZC04YTdmLTJiMjIwNWM4YTZhNiJ9.81o5SkrxmQiDgx9rpSGaKtIBX-IZusvRJhAmdvzsMfI"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Origin",
+								"value": "https://dev.learn.maxima.school"
+							},
+							{
+								"key": "Referer",
+								"value": "https://dev.learn.maxima.school/"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							}
+						],
+						"url": {
+							"raw": "https://backend.dev.learn.maxima.school/users?page=0&size=10&role=TEACHER&state=CONFIRMED&q=",
+							"protocol": "https",
+							"host": [
+								"backend",
+								"dev",
+								"learn",
+								"maxima",
+								"school"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "role",
+									"value": "TEACHER"
+								},
+								{
+									"key": "state",
+									"value": "CONFIRMED"
+								},
+								{
+									"key": "q",
+									"value": ""
+								}
+							]
+						},
+						"description": "Generated from cURL: curl 'https://backend.dev.learn.maxima.school/users?page=0&size=10&role=TEACHER&state=CONFIRMED&q=' \\\r\n  -H 'Accept: application/json, text/plain, */*' \\\r\n  -H 'Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXhpYW1fdF8yIiwidWlkIjo2NSwiZXhwIjoxNzI5MDE5OTk3LCJhdXRob3JpdGllcyI6WyJQQVJUTkVSIl0sImp0aSI6IjRmN2U0MTIzLTJiOTYtNDUwZC04YTdmLTJiMjIwNWM4YTZhNiJ9.81o5SkrxmQiDgx9rpSGaKtIBX-IZusvRJhAmdvzsMfI' \\\r\n  -H 'Connection: keep-alive' \\\r\n  -H 'Origin: https://dev.learn.maxima.school' \\\r\n  -H 'Referer: https://dev.learn.maxima.school/' \\\r\n  -H 'Sec-Fetch-Dest: empty' \\\r\n  -H 'Sec-Fetch-Mode: cors' \\\r\n  -H 'Sec-Fetch-Site: same-site' \\\r\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36' \\\r\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"'"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
